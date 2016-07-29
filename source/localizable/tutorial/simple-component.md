@@ -127,9 +127,10 @@ Now we can add functionality that will show the image of a rental when requested
 
 Let's use the `{{#if}}` helper to show our current rental image larger only when `isWide` is set to true, by setting the element class name to `wide`. We'll also add some text to indicate that the image can be clicked on, and wrap both with an anchor element, giving it the `image` class name so that our test can find it.
 
-```app/templates/components/rental-listing.hbs{+2,+4,+5}
+```app/templates/components/rental-listing.hbs{+2,-3,+4,+5,+6}
 <article class="listing">
   <a class="image {{if isWide "wide"}}">
+    <img src="{{rental.image}}" class="image" alt="">
     <img src="{{rental.image}}" alt="">
     <small>View Larger</small>
   </a>
